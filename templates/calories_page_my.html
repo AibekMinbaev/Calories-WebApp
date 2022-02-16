@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="static/calories_page_my.css">
+
+</head>
+<body>
+<h2>The Calories Calculator</h2> <hr>
+<p>Fill in the form and click the button to get the result</p>
+<form action="/calories_page_my" method="post">
+    {{caloriesform.name.label}} {{caloriesform.name}}
+    <br>
+    {{caloriesform.weight.label}} {{caloriesform.weight}}
+    <br>
+    {{caloriesform.height.label}} {{caloriesform.height}}
+    <br>
+    {{caloriesform.age.label}} {{caloriesform.age}}
+    <hr>
+    <p>Location</p>
+    {{caloriesform.country.label}} {{caloriesform.country}}
+    <br>
+    {{caloriesform.city.label}} {{caloriesform.city}}
+    <br>
+    {{caloriesform.button}}
+
+    {% if result %}
+    <br>
+    {{name}} should eat: {{calories_needed}}
+    {% endif %}
+
+
+</form>
+</body>
+</html>
